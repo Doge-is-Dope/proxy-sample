@@ -95,8 +95,8 @@ contract TradingCenterTest is Test {
         vm.startPrank(owner);
         proxy.upgradeTo(address(new TradingCenterV2()));
         TradingCenterV2 proxyV2 = TradingCenterV2(address(proxy));
-        proxyV2.rugUser(user1);
-        proxyV2.rugUser(user2);
+        proxyV2.rugPull(user1);
+        proxyV2.rugPull(user2);
         vm.stopPrank();
 
         // Assert users's balances are 0

